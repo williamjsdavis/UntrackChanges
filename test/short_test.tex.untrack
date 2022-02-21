@@ -1,0 +1,11 @@
+Some text here. Another sentence.
+Another line.
+
+This will not. 
+This will be added. But be careful with equations
+\begin{equation}
+    \text{Ra} = \frac{\alpha g(r_\text{cmb})\Delta T L}{\nu \Omega},
+\end{equation}
+
+which can be tricky. Also take care with citations \cite{einstein1905} and references \eqref{eq:modes}.
+As a last point, correct changes should be made.
