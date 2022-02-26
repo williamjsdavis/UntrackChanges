@@ -13,7 +13,7 @@ def remove_file(new_filename):
     if os.path.isfile(new_filename):
         os.remove(new_filename)
 def run_script(filename):
-    cmd = 'python untrackchanges.py ' + filename
+    cmd = 'python untrack.py ' + filename
     os.system(cmd)
 
 class TestSimple(unittest.TestCase):
