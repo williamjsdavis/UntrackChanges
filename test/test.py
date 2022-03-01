@@ -1,9 +1,11 @@
 import unittest
-import os.path
+import os
 
 filename = './test/tex-files/short_test1.tex'
-new_filename = filename + '.untrack'
-reference_filename = filename + '.untrack' + '.reference'
+filename_split = os.path.splitext(filename)
+
+new_filename = filename_split[0] + '-untrack' + filename_split[1]
+reference_filename = filename_split[0] + '-ref' + filename_split[1]
 
 def load_text(filename):
     with open(filename) as f:
