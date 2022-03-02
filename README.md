@@ -23,7 +23,7 @@ This will produce a new file with a `.untrack` extension.
 
 ## Todo
 
-- [ ] Complete tests
+- [x] Complete tests
 - [ ] Add options for changes
 - [ ] Add checking before computations
-- [ ] Better file naming
+- [x] Better file naming
