@@ -1,1 +1,1 @@
-from .untrackchanges import update_text
+from .untrackchanges import update_text, check_validity

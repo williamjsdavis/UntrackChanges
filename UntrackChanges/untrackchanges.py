@@ -65,6 +65,23 @@ def find_interior(i,v,start,text):
         ind += 1
     
     return ind, interior_string[:-1]
+
+def bracket_balance(text):
+    bracket_level = 0
+    for v in text:
+        if v == '{':
+            bracket_level += 1
+        elif v == '}':
+            bracket_level -= 1
+    return bracket_level
+
+def check_validity(text):
+    bracket_level = bracket_balance(text)
+    if bracket_level == 0:
+        print("Brackets balanced")
+    else:
+        raise ValueError(f"Bracket finished with {bracket_level}")
+
 def update_text(text):
     text = add_command(text)
     text = remove_command(text)
@@ -76,6 +93,8 @@ if __name__ == "__main__":
 
     with open(filename) as f:
         raw_text = f.read()
+        
+    check_validity(raw_text)
     
     new_text = update_text(raw_text)
     new_filename = filename + '.untrack'

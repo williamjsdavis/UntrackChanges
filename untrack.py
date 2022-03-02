@@ -8,6 +8,8 @@ if __name__ == "__main__":
     with open(filename) as f:
         raw_text = f.read()
     
+    ut.check_validity(raw_text)
+    
     new_text = ut.update_text(raw_text)
     
     filename_split = splitext(filename)
