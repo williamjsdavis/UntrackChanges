@@ -1,7 +1,7 @@
 import unittest
 import os
 
-filename = './test/tex-files/short_test1.tex'
+filename = './test/tex-files/short-test.tex'
 filename_split = os.path.splitext(filename)
 
 new_filename = filename_split[0] + '-untrack' + filename_split[1]
