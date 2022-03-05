@@ -1,5 +1,6 @@
 import sys
 import re
+from os.path import splitext
 
 def add_command(text):
     add_start_pos = [m.start() for m in re.finditer('\\\\add', text)]
@@ -97,8 +98,10 @@ if __name__ == "__main__":
     check_validity(raw_text)
     
     new_text = update_text(raw_text)
-    new_filename = filename + '.untrack'
     
+    filename_split = splitext(filename)
+    new_filename = filename_split[0] + '-untrack' + filename_split[1]
+ 
     with open(new_filename, 'w') as f:
         f.write(new_text)
     print('Success!')
