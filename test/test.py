@@ -1,5 +1,9 @@
 import unittest
 import os
+import sys
+
+sys.path.append("..")
+import UntrackChanges as ut
 
 filename = './test/tex-files/short-test.tex'
 filename_split = os.path.splitext(filename)
@@ -34,6 +38,13 @@ class TestLoadText(unittest.TestCase):
 #        self.raw_text = load_text(filename)
 #    def test_brackets(self):
 #        self.
+
+class TestCheckValidity(unittest.TestCase):
+    def setUp(self):
+        self.raw_text = load_text(filename)
+    def test_check_validity(self):
+        #ut.check_validity(raw_text)
+        self.assertEqual(1, 1)
 
 class TestFullEdit(unittest.TestCase):
     def setUp(self):
