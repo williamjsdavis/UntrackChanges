@@ -29,6 +29,12 @@ class TestLoadText(unittest.TestCase):
     def test_length(self):
         self.assertEqual(len(self.raw_text), 477)
         
+#class TestBracketBalance(unittest.TestCase):
+#    def setUp(self):
+#        self.raw_text = load_text(filename)
+#    def test_brackets(self):
+#        self.
+
 class TestFullEdit(unittest.TestCase):
     def setUp(self):
         remove_file(new_filename)
