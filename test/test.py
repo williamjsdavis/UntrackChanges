@@ -3,7 +3,7 @@ import os
 import sys
 
 sys.path.append("..")
-import UntrackChanges as ut
+import UntrackChanges.UntrackChanges as ut
 
 filename = './test/tex-files/short-test.tex'
 filename_split = os.path.splitext(filename)
@@ -22,17 +22,13 @@ def run_script(filename):
     cmd = 'python untrack.py ' + filename
     os.system(cmd)
 
-class TestSimple(unittest.TestCase):
-
-    def test_upper(self):
-        self.assertEqual(1, 1)
-        
 class TestLoadText(unittest.TestCase):
     def setUp(self):
         self.raw_text = load_text(filename)
     def test_length(self):
         self.assertEqual(len(self.raw_text), 477)
         
+# TODO: Finish testing bracket balancing
 #class TestBracketBalance(unittest.TestCase):
 #    def setUp(self):
 #        self.raw_text = load_text(filename)
@@ -43,10 +39,10 @@ class TestCheckValidity(unittest.TestCase):
     def setUp(self):
         self.raw_text = load_text(filename)
     def test_check_validity(self):
-        #ut.check_validity(raw_text)
-        self.assertEqual(1, 1)
+        # TODO: This currently just prints something. Needs an explicit test (and failure test)
+        ut.check_validity(self.raw_text)
 
-class TestFullEdit(unittest.TestCase):
+class TestFullEditByScript(unittest.TestCase):
     def setUp(self):
         remove_file(new_filename)
         run_script(filename)
