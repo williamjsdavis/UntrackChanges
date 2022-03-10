@@ -80,6 +80,7 @@ def check_validity(text):
     bracket_level = bracket_balance(text)
     if bracket_level == 0:
         print("Brackets balanced")
+        return True
     else:
         raise ValueError(f"Bracket finished with {bracket_level}")
 

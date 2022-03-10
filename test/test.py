@@ -39,8 +39,7 @@ class TestCheckValidity(unittest.TestCase):
     def setUp(self):
         self.raw_text = load_text(filename)
     def test_check_validity(self):
-        # TODO: This currently just prints something. Needs an explicit test (and failure test)
-        ut.check_validity(self.raw_text)
+        self.assertTrue(ut.check_validity(self.raw_text))
 
 class TestFullEditByScript(unittest.TestCase):
     def setUp(self):
