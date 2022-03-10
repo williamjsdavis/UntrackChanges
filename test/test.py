@@ -10,6 +10,7 @@ filename_split = os.path.splitext(filename)
 
 new_filename = filename_split[0] + '-untrack' + filename_split[1]
 reference_filename = filename_split[0] + '-ref' + filename_split[1]
+unbalanced_filename = filename_split[0] + '-unbalanced' + filename_split[1]
 
 def load_text(filename):
     with open(filename) as f:
@@ -40,6 +41,13 @@ class TestCheckValidity(unittest.TestCase):
         self.raw_text = load_text(filename)
     def test_check_validity(self):
         self.assertTrue(ut.check_validity(self.raw_text))
+
+class TestCheckInvalidity(unittest.TestCase):
+    def setUp(self):
+        self.raw_text = load_text(unbalanced_filename)
+    def test_check_invalidity(self):
+        with self.assertRaises(ValueError):
+            ut.check_validity(self.raw_text)
 
 class TestFullEditByScript(unittest.TestCase):
     def setUp(self):
