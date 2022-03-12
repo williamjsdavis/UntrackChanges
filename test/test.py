@@ -29,12 +29,13 @@ class TestLoadText(unittest.TestCase):
     def test_length(self):
         self.assertEqual(len(self.raw_text), 477)
         
-# TODO: Finish testing bracket balancing
-#class TestBracketBalance(unittest.TestCase):
-#    def setUp(self):
-#        self.raw_text = load_text(filename)
-#    def test_brackets(self):
-#        self.
+class TestBracketBalance(unittest.TestCase):
+    def setUp(self):
+        self.raw_text = load_text(filename)
+        self.raw_unbalancedtext = load_text(unbalanced_filename)
+    def test_brackets(self):
+        self.assertEqual(ut.bracket_balance(self.raw_text),0)
+        self.assertEqual(ut.bracket_balance(self.raw_unbalancedtext),1)
 
 class TestCheckValidity(unittest.TestCase):
     def setUp(self):
