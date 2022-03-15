@@ -82,7 +82,7 @@ def check_validity(text):
         print("Brackets balanced")
         return True
     else:
-        raise ValueError(f"Bracket finished with {bracket_level}")
+        raise ValueError(f"Brackets unbalanced, finished with bracket level: {bracket_level}")
 
 def update_text(text):
     text = add_command(text)
