@@ -68,5 +68,13 @@ class TestFullEditByScript(unittest.TestCase):
     def test_output_against_reference(self):
         self.assertEqual(self.new_text, self.reference_text)
 
+class TestErrorByScript(unittest.TestCase):
+    def setUp(self):
+        self.error_filename = unbalanced_filename
+    def test_error_in_brackets_by_script(self):
+        print("Here")
+        with self.assertRaises(ValueError):
+            run_script(self.error_filename)
+
 if __name__ == '__main__':
     unittest.main()
