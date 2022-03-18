@@ -20,7 +20,7 @@ def remove_file(new_filename):
     if os.path.isfile(new_filename):
         os.remove(new_filename)
 def run_script(filename):
-    cmd = 'python untrack.py ' + filename
+    cmd = 'python untrack.py ' + filename + ' >/dev/null 2>&1'
     out = os.system(cmd)
     return out
 
