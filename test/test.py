@@ -77,5 +77,13 @@ class TestErrorByScript(unittest.TestCase):
     def test_error_in_brackets_by_script(self):
         self.assertNotEqual(self.outcode, 0)
 
+class TestFullEditByFunction(unittest.TestCase):
+    def setUp(self):
+        remove_file(new_filename)
+        self.raw_text = load_text(filename)
+        self.new_text = ut.update_text(self.raw_text)
+    def test_change(self):
+        self.assertNotEqual(self.raw_text, self.new_text)
+
 if __name__ == '__main__':
     unittest.main()
