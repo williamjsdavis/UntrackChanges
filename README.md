@@ -25,5 +25,5 @@ This will produce a new file with a `.untrack` extension.
 
 - [x] Complete tests
 - [ ] Add options for changes
-- [ ] Add checking before computations
+- [x] Add checking before computations
 - [x] Better file naming
