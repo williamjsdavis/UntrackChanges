@@ -24,6 +24,6 @@ This will produce a new file with a `.untrack` extension.
 ## Todo
 
 - [x] Complete tests
-- [ ] Add options for changes
+- [x] Add options for changes
 - [x] Add checking before computations
 - [x] Better file naming
