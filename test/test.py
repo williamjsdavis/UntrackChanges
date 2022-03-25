@@ -33,10 +33,12 @@ class TestLoadText(unittest.TestCase):
 class TestBracketBalance(unittest.TestCase):
     def setUp(self):
         self.raw_text = load_text(filename)
-        self.raw_unbalancedtext = load_text(unbalanced_filename)
+        self.unbalanced_text = load_text(unbalanced_filename)
+        self.reference_text = load_text(reference_filename)
     def test_brackets(self):
         self.assertEqual(ut.bracket_balance(self.raw_text),0)
-        self.assertEqual(ut.bracket_balance(self.raw_unbalancedtext),1)
+        self.assertEqual(ut.bracket_balance(self.reference_text),0)
+        self.assertEqual(ut.bracket_balance(self.unbalanced_text),1)
 
 class TestCheckValidity(unittest.TestCase):
     def setUp(self):
