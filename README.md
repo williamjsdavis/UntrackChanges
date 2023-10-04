@@ -7,11 +7,11 @@ The LaTeX package [`trackchanges`](http://trackchanges.sourceforge.net/) is grea
 
 This script does three things:
 
-1. Replaces `\add{...}` with the interior text.
-2. Deletes `\delete{...}`.
-3. Replaces `\change{...}{...}` with the interior text of the second `{...}`.
+1. Replaces `\add{foo}` with `foo`.
+2. Deletes `\delete{bar}`.
+3. Replaces `\change{foo}{bar}` with `bar`.
 
-**Warning:** This script will **not** check if the `trackchanges` commands are valid. I.e. if the curly brackets are unbalanced, this code will error.
+**Warning:** This script will **not** proceed if the `trackchanges` commands are invalid. I.e. if the curly brackets are unbalanced, this code will error.
 
 ## Usage
 
